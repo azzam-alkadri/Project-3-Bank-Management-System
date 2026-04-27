@@ -582,8 +582,18 @@ string NumberToText(long long Number)
 
     if (Number >= 1000 && Number <= 1999) return "One Thousand " + NumberToText(Number % 1000);
     if (Number >= 2000 && Number <= 999999) return NumberToText(Number / 1000) + "Thousands " + NumberToText(Number % 1000);
+    if (Number >= 1000000 && Number <= 1999999) return "One Million " + NumberToText(Number % 1000000);
+    
+    if (Number >= 2000000 && Number <= 999999999) return NumberToText(Number / 1000000) + "Millions " + NumberToText(Number % 1000000);
+    
+   if (Number >= 1000000000 && Number <= 1999999999) return "One Billion " + NumberToText(Number %1000000000);
 
-    return "Number too big"; 
+    else
+    {
+        return NumberToText(Number / 1000000000) + "Billions " +
+            NumberToText(Number % 1000000000);
+    }
+    
 }
 
 
